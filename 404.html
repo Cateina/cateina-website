@@ -4,7 +4,7 @@
   <base href="./">
   <base href="../src/app/home-page">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no,shrink-to-fit=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="translucent">
   <meta name="mobile-web-app-capable" content="yes">
@@ -18,6 +18,23 @@
       document.addEventListener('gesturestart', function (e) {
             e.preventDefault();
       })
+      document.addEventListener('gesturestart', function(e) {
+    e.preventDefault();
+    // special hack to prevent zoom-to-tabs gesture in safari
+    document.body.style.zoom = 0.99;
+});
+
+document.addEventListener('gesturechange', function(e) {
+    e.preventDefault();
+    // special hack to prevent zoom-to-tabs gesture in safari
+    document.body.style.zoom = 0.99;
+});
+
+document.addEventListener('gestureend', function(e) {
+    e.preventDefault();
+    // special hack to prevent zoom-to-tabs gesture in safari
+    document.body.style.zoom = 0.99;
+});
   </script>
   <!-- <script>
     $(document).keydown(function(event) {
@@ -31,6 +48,6 @@ if (event.ctrlKey==true && (event.which == '61' || event.which == '107' || event
 });
   </script> -->
   <app-root></app-root>
-<script src="runtime.db9f79606c057e294bf6.js" defer></script><script src="polyfills.7c89e362a1d38238579c.js" defer></script><script src="main.ba4ddbbe2bf0427b87ed.js" defer></script>
+<script src="runtime.db9f79606c057e294bf6.js" defer></script><script src="polyfills.7c89e362a1d38238579c.js" defer></script><script src="main.6b6a346db22a1f15493c.js" defer></script>
 
 </body></html>
